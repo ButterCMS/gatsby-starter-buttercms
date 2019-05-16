@@ -104,7 +104,7 @@ export const query = graphql`
           facebook_open_graph_title
           seo_title
           headline
-          testimony
+          testimonial
           customer_logo
         }
       }
