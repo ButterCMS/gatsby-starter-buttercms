@@ -13,6 +13,15 @@ Kick off your Gatsby + ButterCMS with this default boilerplate. This Project Cov
     # create a new Gatsby site using the default starter
     npx gatsby new my-default-starter https://github.com/butterCMS/gatsby-starter-buttercms
     ```
+    
+    If you run into an error with `npx`, you may need to first remove `node_modules` then run:
+    
+    ```
+    yarn upgrade --latest
+    yarn install
+    gatsby develop
+    ```
+    
 
 2. **Create Content**
    
