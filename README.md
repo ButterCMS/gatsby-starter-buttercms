@@ -26,7 +26,7 @@ Kick off your Gatsby + ButterCMS with this default boilerplate. This Project Cov
 2. **Create Content**
    
    For this template to work, you have to create your content on ButterCMS
-   as stated [here](https://buttercms.com/docs/api-client/gatsby)
+   as stated [here](https://buttercms.com/docs/api-client/gatsbyjs)
 
 2. **Configuration**
     You need to add the API token from your dashboard, along with associated
