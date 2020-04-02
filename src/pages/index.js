@@ -55,9 +55,9 @@ const IndexPage = ({ data }) => {
           justifyContent: `center`,
         }}
       >
-        {sample_page.customer_logos.map(({ logo_image }) => (
+        {sample_page.customer_logos.map(({ logo_image }, key) => (
           <img
-            key={logo_image}
+            key={key}
             style={{ width: `200px`, borderRadius: `10px` }}
             src={logo_image}
             alt="logo"

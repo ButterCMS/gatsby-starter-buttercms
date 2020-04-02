@@ -69,7 +69,6 @@ exports.createPages = async ({ graphql, actions }) => {
               headline
               hero_image
               call_to_action
-              body
             }
           }
         }
@@ -79,7 +78,7 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log(`Error Running Querying Pages`, error)
   }
 
-  //Create Customer Case study pages
+  //Create index pages
   pages.data.allButterPage.edges.forEach(page => {
     createPage({
       path: `/${page.node.slug}`,
