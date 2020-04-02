@@ -31,7 +31,7 @@ module.exports = {
       },
     },
     {
-      resolve: require.resolve(`gatsby-source-buttercms`),
+      resolve: `gatsby-source-buttercms`,
       options: {
         authToken: process.env.BUTTER_CMS_TOKEN, 
       },
