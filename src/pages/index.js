@@ -1,17 +1,14 @@
-import React from 'react'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
-  const home = data.home.edges[0].node
-  const case_studies = data.case_studies.edges
-
+  const sample_page = data.sample_page.edges[0].node
   return (
     <Layout>
       <SEO
-        title={home.seo_title}
+        title={sample_page.seo_title}
         keywords={[`gatsby`, `application`, `react`]}
       />
       <div
@@ -34,7 +31,7 @@ const IndexPage = ({ data }) => {
             maxWidth: `960px`,
           }}
         >
-          {home.headline}
+          {sample_page.headline}
         </h1>
         <button
           style={{
@@ -45,10 +42,10 @@ const IndexPage = ({ data }) => {
             borderRadius: `10px`,
           }}
         >
-          {home.call_to_action}
+          {sample_page.call_to_action}
         </button>
       </div>
-
+      {/* <h1> {page.hero_image}</h1> */}
       <h1 style={{ fontWeight: `100`, textAlign: `center` }}>Our Customers</h1>
       <div
         style={{
@@ -58,29 +55,22 @@ const IndexPage = ({ data }) => {
           justifyContent: `center`,
         }}
       >
-        {home.customer_logos.map(({ logo_image }) => (
+        {sample_page.customer_logos.map(({ logo_image }, key) => (
           <img
-            alt="customer logo"
-            key={logo_image}
+            key={key}
             style={{ width: `200px`, borderRadius: `10px` }}
             src={logo_image}
+            alt="logo"
           />
-        ))}
-
-        <h1 style={{ fontWeight: `100` }}>Case Studies</h1>
-        {case_studies.map(({ node: { id, slug, headline } }) => (
-          <div key={id}>
-            <Link to={`case-study/${slug}`}>{headline}</Link>
-          </div>
         ))}
       </div>
     </Layout>
   )
 }
-
+//GraphQl query to fetch example page data
 export const query = graphql`
   {
-    home: allButterPage(filter: { slug: { eq: "homepage" } }) {
+    sample_page: allButterPage(filter: { slug: { eq: "sample-page" } }) {
       edges {
         node {
           slug
@@ -94,22 +84,6 @@ export const query = graphql`
         }
       }
     }
-    case_studies: allButterPage(
-      filter: { page_type: { eq: "customer_case_study" } }
-    ) {
-      edges {
-        node {
-          id
-          slug
-          facebook_open_graph_title
-          seo_title
-          headline
-          testimonial
-          customer_logo
-        }
-      }
-    }
   }
 `
-
 export default IndexPage

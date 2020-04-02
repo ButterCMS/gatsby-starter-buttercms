@@ -4,9 +4,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const customerCaseStudy = path.resolve(
-    `./src/templates/customer-case-study.js`
-  )
+  const indexPage = path.resolve(`./src/pages/index.js`)
 
   let posts
   try {
@@ -57,21 +55,20 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Fetch Customer Case study pages
+  // Fetch pages
   let pages
   try {
     pages = await graphql(`
       {
-        allButterPage(filter: { page_type: { eq: "customer_case_study" } }) {
+        allButterPage(filter: { slug: { eq: "sample-page" } }) {
           edges {
             node {
               id
               slug
-              facebook_open_graph_title
               seo_title
               headline
-              testimony
-              customer_logo
+              hero_image
+              call_to_action
             }
           }
         }
@@ -81,11 +78,11 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log(`Error Running Querying Pages`, error)
   }
 
-  //Create Customer Case study pages
+  //Create index pages
   pages.data.allButterPage.edges.forEach(page => {
     createPage({
-      path: `/case-study/${page.node.slug}`,
-      component: customerCaseStudy,
+      path: `/${page.node.slug}`,
+      component: indexPage,
       context: {
         slug: page.node.slug,
       },

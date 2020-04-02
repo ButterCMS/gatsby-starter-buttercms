@@ -33,17 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-source-buttercms`,
       options: {
-        authToken: process.env.BUTTER_CMS_TOKEN,
-        // Optional. Returns values for the supplied content field keys.
-        contentFields: {
-          keys: [`faq_items`, `faq_headline`],
-          // Optional. Set to 1 to enable test mode for viewing draft content.
-          test: 0,
-        },
-        // Optional. Array of page slugs.
-        pages: [`homepage`],
-        // Optional. Array of page types.
-        pageTypes: [`customer_case_study`],
+        authToken: process.env.BUTTER_CMS_TOKEN, 
       },
     },
 
