@@ -39,14 +39,16 @@ Kick off your Gatsby + ButterCMS with this default boilerplate.
       resolve: `gatsby-source-buttercms`,
       options: {
         authToken: `<API_TOKEN>`,
-        // Optional. Returns values for the supplied content field keys.
+        // Optional array of Collection key 
         contentFields: {
           keys: [`collection_key`],
           // Optional. Set to 1 to enable test mode for viewing draft content.
           test: 0,
         },
-        // Optional. Array of page types.
+        // Optional array of page type keys
         pageTypes: [`page_type_key`],
+        // Optional array of locales (if configured in your account)
+        locales: [`en`, `es`, `fr`]
       },
     },
     ```
