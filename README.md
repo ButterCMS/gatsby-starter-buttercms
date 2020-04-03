@@ -1,4 +1,4 @@
-Kick off your Gatsby + ButterCMS with this default boilerplate. This Project Covers the ContentField, Posts and Pages in ButterCMS .This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Kick off your Gatsby + ButterCMS with this default boilerplate. 
 
 [Live demo](https://gatsby-starter-buttercms.netlify.com/)
 
@@ -45,8 +45,6 @@ Kick off your Gatsby + ButterCMS with this default boilerplate. This Project Cov
           // Optional. Set to 1 to enable test mode for viewing draft content.
           test: 0,
         },
-        // Optional. Array of page slugs.
-        pages: [`homepage`],
         // Optional. Array of page types.
         pageTypes: [`customer_case_study`],
       },
