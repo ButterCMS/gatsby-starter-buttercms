@@ -4,7 +4,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const indexPage = path.resolve(`./src/pages/index.js`)
+  const pageTemplate = path.resolve(`./src/templates/page.js`)
 
   let posts
   try {
@@ -36,8 +36,8 @@ exports.createPages = async ({ graphql, actions }) => {
   } catch (error) {
     console.log(`Error Running Querying Posts`, error)
   }
-    
-  posts = posts.data.allButterPost.edges;
+
+  posts = posts.data.allButterPost.edges
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
   try {
     pages = await graphql(`
       {
-        allButterPage(filter: { slug: { eq: "sample-page" } }) {
+        allButterPage {
           edges {
             node {
               id
@@ -82,7 +82,7 @@ exports.createPages = async ({ graphql, actions }) => {
   pages.data.allButterPage.edges.forEach(page => {
     createPage({
       path: `/${page.node.slug}`,
-      component: indexPage,
+      component: pageTemplate,
       context: {
         slug: page.node.slug,
       },
