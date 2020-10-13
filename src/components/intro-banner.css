@@ -1,0 +1,10 @@
+.intro-banner {
+  background-image: url("https://buttercms.com/static/v2/images/webp/intro.ccbd0c7a52ae.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  text-align: center;
+  margin: 0 -20px 20px -20px;
+  padding: 100px 0 50px;
+}

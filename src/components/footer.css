@@ -1,0 +1,11 @@
+footer {
+  padding: 20px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  background: #19234f;
+  margin: 50px -20px 0;
+}
+
+footer a {
+  color: #ffffff;
+}

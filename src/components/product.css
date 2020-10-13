@@ -1,0 +1,21 @@
+.screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.screenshot {
+  padding: 10px;
+}
+
+.screenshot__image {
+  max-width: 300px;
+  display: block;
+}
+
+.screenshot__caption {
+  font-size: 12px;
+  text-align: center;
+}
