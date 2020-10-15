@@ -1,14 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./intro-banner.css";
 
-const IntroBanner = () => (
-  <div className="intro-banner">
-    <h1>ButterCMS & Gatsby</h1>
-    <h2>
-      Headless CMS <span style={{ color: `#fed700` }}>you'll melt over</span>
-    </h2>
-  </div>
+const IntroBanner = ({ children }) => (
+  <div className="intro-banner">{children}</div>
 );
+
+IntroBanner.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default IntroBanner;
