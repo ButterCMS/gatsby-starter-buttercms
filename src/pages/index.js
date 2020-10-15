@@ -15,7 +15,13 @@ const IndexPage = ({ data }) => {
         title={sample_page.seo.title}
         keywords={[`gatsby`, `application`, `react`]}
       />
-      <IntroBanner></IntroBanner>
+      <IntroBanner>
+        <h1>ButterCMS & Gatsby</h1>
+        <h2>
+          Headless CMS{" "}
+          <span style={{ color: `#fed700` }}>you'll melt over</span>
+        </h2>
+      </IntroBanner>
       <h1
         style={{
           textAlign: `center`,
