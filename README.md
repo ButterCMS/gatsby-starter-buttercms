@@ -117,7 +117,20 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Deploy
 
+### Gatsby Cloud
+While creating a site on Gatsby Cloud create `BUTTER_CMS_TOKEN` environment variable set to your Read API Token which could be found on the settings page https://buttercms.com/settings/.
+
+### Preview
+1. In Gatsby Cloud go to Site Settings -> Webhook and copy Preview Webhook URL (https://share.getcloudapp.com/kpuKN1v0)
+2. In ButterCMS go to Webhooks page https://buttercms.com/webhooks/ and paste copied value into Target URL input field and select appropriate Event i.e. `post.all - blog post has any activity` and click "Save"
+3. In Gatsby Cloud go to CMS Preview and copy preview site URL (https://share.getcloudapp.com/eDujwkwj)
+4. In ButterCMS go to Preview Settings page https://buttercms.com/settings/previews and paste into Blog Posts input field url for blog posts. For this repository it is [copied preview site url]/blog/&lt;slug&gt; i.e. https://preview-gatsbystarterbuttercmsmas34503.gtsb.io/blog/&lt;slug&gt; and click Save (https://share.getcloudapp.com/6qu8x9Yw)
+5. To preview a post in ButterCMS (webhook should be set to post related event) go to the Posts dashboard (https://buttercms.com/blog_home/) and click on any post. Click Preview button and the preview panel will appear at the bottom of the page (https://share.getcloudapp.com/llu5nQm8). Make changes to the post and to preview how it would look like click Save Draft. The preview panel should update automatically and reflect made changes. Note, that it might take several seconds for preview site to update. To preview pages use the same approach.
+
+### Netlify
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/butterCMS/gatsby-starter-buttercms)
+
+
 
 ## Other
 
