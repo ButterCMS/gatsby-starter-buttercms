@@ -64,7 +64,11 @@ exports.createPages = async ({ graphql, actions }) => {
           edges {
             node {
               id
-              slug
+              meta {
+                slug
+                updated
+                published
+              }
               readme
               seo {
                 title
@@ -92,10 +96,10 @@ exports.createPages = async ({ graphql, actions }) => {
   //Create index pages
   pages.data.allButterPage.edges.forEach((page) => {
     createPage({
-      path: `/${page.node.slug}`,
+      path: `/${page.node.meta.slug}`,
       component: pageTemplate,
       context: {
-        slug: page.node.slug,
+        slug: page.node.meta.slug,
       },
     });
   });
