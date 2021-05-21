@@ -6,6 +6,7 @@ import SEO from "../components/seo";
 import Product from "../components/product";
 import ProductFeature from "../components/product-feature";
 import IntroBanner from "../components/intro-banner";
+import Date from "../components/date"
 
 const IndexPage = ({ data }) => {
   const sample_page = data.sample_page.edges[0].node;
@@ -59,6 +60,24 @@ const IndexPage = ({ data }) => {
             )
           )
         )}
+        <div
+          style={{
+            fontSize: `14px`,
+            display: `flex`,
+            justifyContent: `flex-end`
+          }}
+        >
+        {sample_page.meta.updated && (
+          <div style={{padding: `5px`}}>
+            Updated: <Date dateString={sample_page.meta.updated}></Date>
+          </div>)
+        }
+        {sample_page.meta.published && (
+            <div style={{padding: `5px`}}>
+              Published: <Date dateString={sample_page.meta.published}></Date>
+            </div>
+          )}
+        </div>
       </article>
     </Layout>
   );
@@ -70,7 +89,11 @@ export const query = graphql`
       edges {
         node {
           id
-          slug
+          meta {
+            slug
+            updated
+            published
+          }
           readme
           seo {
             title
